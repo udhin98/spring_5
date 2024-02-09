@@ -1,0 +1,56 @@
+<html>
+<head>
+    <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+<button id="clickMeHello">ClickMe Hello</button>
+<button id="clickMeGetNome">ClickMe GetNome</button>
+<button id="clickMePostNome">ClickMe PostNome</button>
+
+<script>
+    $("#clickMeHello").on('click', function(){
+        console.log("Clicked");
+        $.ajax({
+            url: "http://localhost:8080/api/hello",
+            type: "GET",
+            success: function(data){
+                console.log(data);
+            },
+            error: function(error){
+                console.error(error);
+            }
+        });
+    })
+     $("#clickMeGetNome").on('click', function(){
+        console.log("Clicked");
+        $.ajax({
+            url: "http://localhost:8080/api/nome",
+            type: "GET",
+            success: function(data){
+                console.log(data);
+            },
+            error: function(error){
+                console.error(error);
+            }
+        });
+    })
+    $("#clickMePostNome").on('click', function(){
+        console.log("Clicked");
+        $.ajax({
+            url: "http://localhost:8080/api/nome",
+            type: "POST",
+            success: function(data){
+                console.log(data);
+            },
+            error: function(error){
+                console.error(error);
+            }
+        });
+    })
+</script>
+</body>
+</html>
